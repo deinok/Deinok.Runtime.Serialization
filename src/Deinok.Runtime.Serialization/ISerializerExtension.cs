@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 
-namespace Deinok.Runtime.Serialization{
+namespace Deinok.Runtime.Serialization {
 
 	/// <summary>
 	/// Extension Methods for ISerializer
 	/// </summary>
-    public static class ISerializerExtension{
+    public static class ISerializerExtension {
 
 		/// <summary>
 		/// Serializes the input async
