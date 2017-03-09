@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Optimize>True</Optimize>
+    <DocumentationFile>bin\Debug\netstandard1.0\Deinok.Runtime.Serialization.xml</DocumentationFile>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+
+</Project>
