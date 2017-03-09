@@ -4,16 +4,16 @@ namespace Deinok.Runtime.Serialization.Tests {
 
 	public class IDeserializerTest {
 
+		private IDeserializer<string, string> deserializer = new DeserializerMock();
+
 		[Fact]
-		public void DeserializerDeserializeTest(){
-			IDeserializer<string, string> deserializer = new DeserializerMock();
-			Assert.Equal("", deserializer.Deserialize("anyThing"));
+		public void DeserializeTest(){
+			Assert.Equal("", this.deserializer.Deserialize("anyThing"));
 		}
 
 		[Fact]
-		public async void DeserializerDeserializeAsyncTest(){
-			IDeserializer<string, string> deserializer = new DeserializerMock();
-			Assert.Equal("", await deserializer.DeserializeAsync("anyThing"));
+		public async void DeserializeAsyncTest(){
+			Assert.Equal("", await this.deserializer.DeserializeAsync("anyThing"));
 		}
 
 		private class DeserializerMock : IDeserializer<string, string>{
