@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serializatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deinok.Runtime.Serialization.Json", "src\Deinok.Runtime.Serialization.Json\Deinok.Runtime.Serialization.Json.csproj", "{E18FB5EA-B56B-4155-A79D-3048FEB61E4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deinok.Runtime.Serialization.Json.Tests", "tests\Deinok.Runtime.Serialization.Json.Tests\Deinok.Runtime.Serialization.Json.Tests.csproj", "{0E7D4C2E-730E-44A3-9177-3451291AB82E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{E18FB5EA-B56B-4155-A79D-3048FEB61E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E18FB5EA-B56B-4155-A79D-3048FEB61E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E18FB5EA-B56B-4155-A79D-3048FEB61E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7D4C2E-730E-44A3-9177-3451291AB82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7D4C2E-730E-44A3-9177-3451291AB82E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7D4C2E-730E-44A3-9177-3451291AB82E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7D4C2E-730E-44A3-9177-3451291AB82E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +52,6 @@ Global
 		{B02B7DB2-62F3-46A4-8980-45B7231A3B52} = {98EEE159-981D-4910-A9C1-B7C172E8E2C2}
 		{BEA0898F-EF6C-43FE-8530-36863DD1E81F} = {E5F495D5-2ADD-4430-AA0C-9639B406C1E9}
 		{E18FB5EA-B56B-4155-A79D-3048FEB61E4F} = {98EEE159-981D-4910-A9C1-B7C172E8E2C2}
+		{0E7D4C2E-730E-44A3-9177-3451291AB82E} = {E5F495D5-2ADD-4430-AA0C-9639B406C1E9}
 	EndGlobalSection
 EndGlobal

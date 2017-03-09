@@ -7,4 +7,12 @@
     <DocumentationFile>bin\Debug\netstandard1.0\Deinok.Runtime.Serialization.Json.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Deinok.Runtime.Serialization\Deinok.Runtime.Serialization.csproj" />
+  </ItemGroup>
+
 </Project>
