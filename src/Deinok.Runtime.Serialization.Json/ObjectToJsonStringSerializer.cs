@@ -10,7 +10,7 @@ namespace Deinok.Runtime.Serialization.Json {
 
 
 		public override object Deserialize(string input){
-			return JsonConvert.DeserializeObject(input);
+			return JsonConvert.DeserializeObject<object>(input);
 		}
 
     }
