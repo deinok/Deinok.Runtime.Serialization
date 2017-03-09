@@ -2,7 +2,7 @@
 
 namespace Deinok.Runtime.Serialization.Tests {
 
-	public class ISerializerTest{
+	public class ISerializerTest {
 
         [Fact]
         public void SerializerSerializeTest() {
