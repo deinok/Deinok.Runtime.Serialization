@@ -23,3 +23,4 @@ test:
   override:
     # DotNet Test
     - cd ./tests/Deinok.Runtime.Serialization.Tests/ && dotnet test
+    - cd ./tests/Deinok.Runtime.Serialization.Json.Tests/ && dotnet test
