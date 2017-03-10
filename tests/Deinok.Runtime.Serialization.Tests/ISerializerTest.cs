@@ -4,22 +4,24 @@ namespace Deinok.Runtime.Serialization.Tests {
 
 	public class ISerializerTest {
 
-		private ISerializer<string, string> serializer = new SerializerMock();
+		private readonly ISerializer<string, string> serializer = new SerializerMock();
+		private readonly string serializedString = "any:thing";
+		private readonly string deserializedString = "any-thing";
 
 		[Fact]
         public void SerializeTest() {
-			Assert.Equal("", this.serializer.Serialize("anyThing"));
+			Assert.Equal(this.serializedString, this.serializer.Serialize(this.deserializedString));
         }
 
 		[Fact]
 		public async void SerializeAsyncTest(){
-			Assert.Equal("", await this.serializer.SerializeAsync("anyThing"));
+			Assert.Equal(this.serializedString, await this.serializer.SerializeAsync(this.deserializedString));
 		}
 
 		private class SerializerMock : ISerializer<string, string>{
 
 			public string Serialize(string input){
-				return "";
+				return input.Replace('-', ':');
 			}
 
 		}

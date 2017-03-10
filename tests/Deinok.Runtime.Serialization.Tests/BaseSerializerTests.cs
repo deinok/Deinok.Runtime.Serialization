@@ -4,37 +4,39 @@ namespace Deinok.Runtime.Serialization.Tests {
 
 	public class BaseSerializerTest {
 
-		private SerializerMock serializer = new SerializerMock();
+		private readonly SerializerMock serializer = new SerializerMock();
+		private readonly string serializedString = "any:thing";
+		private readonly string deserializedString = "any-thing";
 
 		[Fact]
 		public void SerializeTest(){
-			Assert.Equal("any-thing", this.serializer.Serialize("any:thing"));
+			Assert.Equal(this.serializedString, this.serializer.Serialize(this.deserializedString));
 		}
 
 		[Fact]
 		public async void SerializeAsyncTest(){
-			Assert.Equal("any-thing", await this.serializer.SerializeAsync("any:thing"));
+			Assert.Equal(this.serializedString, await this.serializer.SerializeAsync(this.deserializedString));
 		}
 
 
 		[Fact]
 		public void DeserializeTest(){
-			Assert.Equal("any:thing", this.serializer.Deserialize("any-thing"));
+			Assert.Equal(this.deserializedString, this.serializer.Deserialize(this.serializedString));
 		}
 
 		[Fact]
 		public async void DeserializeAsyncTest(){
-			Assert.Equal("any:thing", await this.serializer.DeserializeAsync("any-thing"));
+			Assert.Equal(this.deserializedString, await this.serializer.DeserializeAsync(this.serializedString));
 		}
 
 		private class SerializerMock : BaseSerializer<string, string>{
 
 			public override string Serialize(string input){
-				return input.Replace(':', '-');
+				return input.Replace('-', ':');
 			}
 
 			public override string Deserialize(string input){
-				return input.Replace('-', ':');
+				return input.Replace(':', '-');
 			}
 
 		}

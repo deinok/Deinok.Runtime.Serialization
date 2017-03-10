@@ -4,9 +4,9 @@ namespace Deinok.Runtime.Serialization.Json.Tests{
 
 	public class JsonStringSerializerTest{
 
+		private readonly JsonStringSerializer serializer = new JsonStringSerializer();
 		private readonly MockObject mockObject = new MockObject { Integer = 5, String = "anyString" };
 		private readonly string jsonString = "{\"Integer\":5,\"String\":\"anyString\"}";
-		private readonly JsonStringSerializer serializer = new JsonStringSerializer();
 
 		[Fact]
 		public void SerializeTest(){
