@@ -5,15 +5,15 @@ namespace Deinok.Runtime.Serialization {
 	/// <summary>
 	/// Interface to Deserialize a TInput to TOutput
 	/// </summary>
-	/// <typeparam name="TInput">The Input Type</typeparam>
-	/// <typeparam name="TOutput">The Output Type</typeparam>
+	/// <typeparam name="TInput">The Serialized Type</typeparam>
+	/// <typeparam name="TOutput">The Deserialized Type</typeparam>
 	public interface IDeserializer<TInput, TOutput> {
 
 		/// <summary>
 		/// Deserialize a TInput to a TOutput
 		/// </summary>
-		/// <param name="input">The Input Type</param>
-		/// <returns>The Output Type</returns>
+		/// <param name="input">The Input</param>
+		/// <returns>The Output</returns>
 		TOutput Deserialize(TInput input);
 
 	}
@@ -24,15 +24,17 @@ namespace Deinok.Runtime.Serialization {
 	public static class IDeserializerExtension {
 
 		/// <summary>
-		/// Deserializes the input async
+		/// Deserialize a TInput to a TOutput in a new thread
 		/// </summary>
-		/// <typeparam name="TInput">The Input Type</typeparam>
-		/// <typeparam name="TOutput">The Output Type</typeparam>
+		/// <typeparam name="TInput">The Serialized Type</typeparam>
+		/// <typeparam name="TOutput">The Deserialized Type</typeparam>
 		/// <param name="deserializer">The Deserializer instance</param>
 		/// <param name="input">The Input</param>
 		/// <returns>The Output Task</returns>
 		public static async Task<TOutput> DeserializeAsync<TInput, TOutput>(this IDeserializer<TInput, TOutput> deserializer, TInput input) {
-			return await Task.Run(() => deserializer.Deserialize(input));
+			return await Task.Run(() => {
+				return deserializer.Deserialize(input);
+			});
 		}
 
 	}
