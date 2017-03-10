@@ -8,7 +8,7 @@
 	public interface IDeserializer<TInput, TOutput> {
 
 		/// <summary>
-		/// Deerialize a TInput to a TOutput
+		/// Deserialize a TInput to a TOutput
 		/// </summary>
 		/// <param name="input">The Input Type</param>
 		/// <returns>The Output Type</returns>
