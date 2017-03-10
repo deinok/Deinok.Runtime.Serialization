@@ -1,4 +1,4 @@
-﻿namespace Deinok.Runtime.Serialization{
+﻿namespace Deinok.Runtime.Serialization.Generic{
 
 	/// <summary>
 	/// A Generic Deserializer
