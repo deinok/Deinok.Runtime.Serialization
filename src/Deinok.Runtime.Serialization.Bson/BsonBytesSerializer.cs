@@ -1,10 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using System.IO;
+using Deinok.Runtime.Serialization.Generic;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
-using System.IO;
 
 namespace Deinok.Runtime.Serialization.Bson {
 
-	public class BsonBytesSerializer{
+	public class BsonBytesSerializer:BaseGenericSerializer<byte[]>{
 
 		/// <summary>
 		/// Serialize a object
@@ -12,7 +13,7 @@ namespace Deinok.Runtime.Serialization.Bson {
 		/// <typeparam name="TInput">The Deserialized Type</typeparam>
 		/// <param name="input">The Input</param>
 		/// <returns>The Bson byte[]</returns>
-		public byte[] Serialize<TInput>(TInput input){
+		public override byte[] Serialize<TInput>(TInput input){
 			using (MemoryStream memoryStream = new MemoryStream()){
 				using (BsonWriter bsonWriter = new BsonWriter(memoryStream)){
 					JsonSerializer jsonSerializer = new JsonSerializer();
@@ -28,7 +29,7 @@ namespace Deinok.Runtime.Serialization.Bson {
 		/// <typeparam name="TOutput">The Deserialized Type</typeparam>
 		/// <param name="input">The Input</param>
 		/// <returns>The Output</returns>
-		public TOutput Deserialize<TOutput>(byte[] input){
+		public override TOutput Deserialize<TOutput>(byte[] input){
 			using (MemoryStream memoryStream = new MemoryStream(input)){
 				using (BsonReader bsonReader = new BsonReader(memoryStream)){
 					JsonSerializer jsonSerializer = new JsonSerializer();
