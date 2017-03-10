@@ -5,6 +5,9 @@ using Newtonsoft.Json.Bson;
 
 namespace Deinok.Runtime.Serialization.Bson {
 
+	/// <summary>
+	/// Serializes objects to a Bson byte[] 
+	/// </summary>
 	public class BsonBytesSerializer:BaseGenericSerializer<byte[]>{
 
 		/// <summary>
