@@ -44,4 +44,3 @@ namespace Deinok.Runtime.Serialization.Json.Tests{
 	}
 
 }
-

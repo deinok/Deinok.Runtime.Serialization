@@ -2,8 +2,7 @@
 using Newtonsoft.Json.Bson;
 using System.IO;
 
-namespace Deinok.Runtime.Serialization.Bson
-{
+namespace Deinok.Runtime.Serialization.Bson {
 
 	public class BsonBytesSerializer{
 
