@@ -22,9 +22,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serializatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serialization.Json.Tests", "tests\Deinok.Runtime.Serialization.Json.Tests\Deinok.Runtime.Serialization.Json.Tests.csproj", "{0E7D4C2E-730E-44A3-9177-3451291AB82E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deinok.Runtime.Serialization.Bson", "src\Deinok.Runtime.Serialization.Bson\Deinok.Runtime.Serialization.Bson.csproj", "{2C620AC7-F1AC-425B-AAE5-0187DD9F7A65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serialization.Bson", "src\Deinok.Runtime.Serialization.Bson\Deinok.Runtime.Serialization.Bson.csproj", "{2C620AC7-F1AC-425B-AAE5-0187DD9F7A65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deinok.Runtime.Serialization.Bson.Tests", "tests\Deinok.Runtime.Serialization.Bson.Tests\Deinok.Runtime.Serialization.Bson.Tests.csproj", "{DCD8A64C-E7E0-4145-81F3-08BAD78AFEDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serialization.Bson.Tests", "tests\Deinok.Runtime.Serialization.Bson.Tests\Deinok.Runtime.Serialization.Bson.Tests.csproj", "{DCD8A64C-E7E0-4145-81F3-08BAD78AFEDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deinok.Runtime.Serialization.Base64", "src\Deinok.Runtime.Serialization.Base64\Deinok.Runtime.Serialization.Base64.csproj", "{D836E97A-44B7-4FA1-B8C5-ED44B6D39B5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deinok.Runtime.Serialization.Base64.Tests", "tests\Deinok.Runtime.Serialization.Base64.Tests\Deinok.Runtime.Serialization.Base64.Tests.csproj", "{2CCF3737-78FC-4175-93FF-87D9ADE7741D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +60,14 @@ Global
 		{DCD8A64C-E7E0-4145-81F3-08BAD78AFEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCD8A64C-E7E0-4145-81F3-08BAD78AFEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCD8A64C-E7E0-4145-81F3-08BAD78AFEDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D836E97A-44B7-4FA1-B8C5-ED44B6D39B5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D836E97A-44B7-4FA1-B8C5-ED44B6D39B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D836E97A-44B7-4FA1-B8C5-ED44B6D39B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D836E97A-44B7-4FA1-B8C5-ED44B6D39B5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCF3737-78FC-4175-93FF-87D9ADE7741D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCF3737-78FC-4175-93FF-87D9ADE7741D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCF3737-78FC-4175-93FF-87D9ADE7741D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCF3737-78FC-4175-93FF-87D9ADE7741D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +79,7 @@ Global
 		{0E7D4C2E-730E-44A3-9177-3451291AB82E} = {E5F495D5-2ADD-4430-AA0C-9639B406C1E9}
 		{2C620AC7-F1AC-425B-AAE5-0187DD9F7A65} = {98EEE159-981D-4910-A9C1-B7C172E8E2C2}
 		{DCD8A64C-E7E0-4145-81F3-08BAD78AFEDC} = {E5F495D5-2ADD-4430-AA0C-9639B406C1E9}
+		{D836E97A-44B7-4FA1-B8C5-ED44B6D39B5F} = {98EEE159-981D-4910-A9C1-B7C172E8E2C2}
+		{2CCF3737-78FC-4175-93FF-87D9ADE7741D} = {E5F495D5-2ADD-4430-AA0C-9639B406C1E9}
 	EndGlobalSection
 EndGlobal
