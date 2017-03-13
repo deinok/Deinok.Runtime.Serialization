@@ -5,6 +5,9 @@ jobs:
     docker:
       - image: microsoft/dotnet:1.1.1-runtime
     steps:
+      - run:
+          name: Install Git
+          command: sudo apt-get install git
       - checkout
       - run:
           name: Hello World
