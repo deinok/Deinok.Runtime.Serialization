@@ -1,1 +1,12 @@
 version: 2
+jobs:
+  build:
+    working_directory: ~/
+    docker:
+      - image: microsoft/dotnet:1.1.1-runtime
+    steps:
+      - checkout
+      - run:
+          name: Hello World
+          command: echo "hello world"
+          
