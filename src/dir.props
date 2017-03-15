@@ -3,6 +3,7 @@
   <Import Project="..\dir.props" />
 
   <PropertyGroup>
+  	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Optimize>True</Optimize>
   </PropertyGroup>
 
