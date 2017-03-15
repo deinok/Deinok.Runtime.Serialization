@@ -7,7 +7,7 @@ namespace Deinok.Runtime.Serialization.Bson.Tests{
 
 		private readonly BsonBytesSerializer serializer = new BsonBytesSerializer();
 		private readonly MockObject mockObject = new MockObject { Integer = 5, String = "anyString" };
-		private readonly byte[] bsonBytes=Convert.FromBase64String("KAAAABBJbnRlZ2VyAAUAAAACU3RyaW5nAAoAAABhbnlTdHJpbmcAAA==");
+		private readonly byte[] bsonBytes = Convert.FromBase64String("KAAAABBJbnRlZ2VyAAUAAAACU3RyaW5nAAoAAABhbnlTdHJpbmcAAA==");
 
 		[Fact]
 		public void SerializeTest(){
