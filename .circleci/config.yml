@@ -1,4 +1,4 @@
-version: 2
+﻿version: 2
 jobs:
   build:
     working_directory: ~/Deinok.Runtime.Serialization/
@@ -6,14 +6,10 @@ jobs:
       - image: microsoft/dotnet:1.1-sdk
     steps:
       - checkout
-      - restore_cache:
-          key: nuget
+
       - run: dotnet restore
-      - save_cache:
-          key: nuget
-          paths:
-            - ~/.nuget/
       - run: dotnet build
+
       - run: cd ./tests/Deinok.Runtime.Serialization.Tests/ && dotnet test
       - run: cd ./tests/Deinok.Runtime.Serialization.Base64.Tests/ && dotnet test
       - run: cd ./tests/Deinok.Runtime.Serialization.Bson.Tests/ && dotnet test
