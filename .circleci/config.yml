@@ -10,7 +10,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build
 
-      - run: cd ./tests/Deinok.Runtime.Serialization.Tests/ && dotnet test
-      - run: cd ./tests/Deinok.Runtime.Serialization.Base64.Tests/ && dotnet test
-      - run: cd ./tests/Deinok.Runtime.Serialization.Bson.Tests/ && dotnet test
-      - run: cd ./tests/Deinok.Runtime.Serialization.Json.Tests/ && dotnet test
+      - run: dotnet test ./tests/Deinok.Runtime.Serialization.Tests/Deinok.Runtime.Serialization.Tests.csproj
+      - run: dotnet test ./tests/Deinok.Runtime.Serialization.Base64.Tests/Deinok.Runtime.Serialization.Base64.Tests.csproj
+      - run: dotnet test ./tests/Deinok.Runtime.Serialization.Bson.Tests/Deinok.Runtime.Serialization.Bson.Tests.csproj
+      - run: dotnet test ./tests/Deinok.Runtime.Serialization.Json.Tests/Deinok.Runtime.Serialization.Json.Tests.csproj
