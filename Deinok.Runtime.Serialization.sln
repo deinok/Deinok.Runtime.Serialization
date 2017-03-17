@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		circle.yml = circle.yml
-		dir.props = dir.props
+		Deinok.Runtime.Serialization.props = Deinok.Runtime.Serialization.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{98EEE159-981D-4910-A9C1-B7C172E8E2C2}"
