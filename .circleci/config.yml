@@ -1,1 +1,8 @@
 version: 2
+jobs:
+  build:
+    docker:
+      - image: microsoft/dotnet:1.1-sdk
+    steps:
+      - checkout
+      - run: echo "Hello World"
