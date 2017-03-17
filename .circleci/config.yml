@@ -7,9 +7,12 @@ jobs:
     steps:
       - checkout
 
+      # Compile
+      - run: dotnet clean
       - run: dotnet restore
       - run: dotnet build
 
+      # Test
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Tests/Deinok.Runtime.Serialization.Tests.csproj
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Base64.Tests/Deinok.Runtime.Serialization.Base64.Tests.csproj
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Bson.Tests/Deinok.Runtime.Serialization.Bson.Tests.csproj
