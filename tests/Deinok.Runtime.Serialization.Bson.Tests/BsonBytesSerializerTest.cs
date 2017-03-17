@@ -29,7 +29,7 @@ namespace Deinok.Runtime.Serialization.Bson.Tests{
 					return false;
 				}
 
-				MockObject that = (MockObject)obj;
+				var that = (MockObject)obj;
 
 				if (this.Integer != that.Integer){
 					return false;

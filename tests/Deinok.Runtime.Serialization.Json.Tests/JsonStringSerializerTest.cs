@@ -28,7 +28,7 @@ namespace Deinok.Runtime.Serialization.Json.Tests{
 					return false;
 				}
 
-				MockObject that = (MockObject) obj;
+				var that = (MockObject) obj;
 
 				if (this.Integer != that.Integer) {
 					return false;
