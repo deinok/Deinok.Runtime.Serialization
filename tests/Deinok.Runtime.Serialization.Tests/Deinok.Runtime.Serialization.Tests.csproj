@@ -2,10 +2,6 @@
 
   <Import Project="../dir.props" />
 
-  <PropertyGroup>    
-    <TargetFramework>netcoreapp1.1</TargetFramework>    
-  </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\src\Deinok.Runtime.Serialization\Deinok.Runtime.Serialization.csproj" />
   </ItemGroup>
