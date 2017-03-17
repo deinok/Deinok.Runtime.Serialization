@@ -1,0 +1,16 @@
+﻿version: 2
+jobs:
+  build:
+    working_directory: ~/Deinok.Runtime.Serialization/
+    docker:
+      - image: microsoft/dotnet:1.1-sdk
+    steps:
+      - checkout
+
+      - run: dotnet restore
+      - run: dotnet build
+
+      - run: dotnet test ./tests/Deinok.Runtime.Serialization.Tests/Deinok.Runtime.Serialization.Tests.csproj
+      - run: dotnet test ./tests/Deinok.Runtime.Serialization.Base64.Tests/Deinok.Runtime.Serialization.Base64.Tests.csproj
+      - run: dotnet test ./tests/Deinok.Runtime.Serialization.Bson.Tests/Deinok.Runtime.Serialization.Bson.Tests.csproj
+      - run: dotnet test ./tests/Deinok.Runtime.Serialization.Json.Tests/Deinok.Runtime.Serialization.Json.Tests.csproj
