@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serializatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E5F495D5-2ADD-4430-AA0C-9639B406C1E9}"
 	ProjectSection(SolutionItems) = preProject
-		tests\dir.props = tests\dir.props
+		tests\Tests.props = tests\Tests.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serialization.Tests", "tests\Deinok.Runtime.Serialization.Tests\Deinok.Runtime.Serialization.Tests.csproj", "{BEA0898F-EF6C-43FE-8530-36863DD1E81F}"

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="../dir.props" />
+  <Import Project="../Tests.props" />
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Deinok.Runtime.Serialization.Json\Deinok.Runtime.Serialization.Json.csproj" />
