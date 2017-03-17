@@ -1,6 +1,7 @@
 ﻿<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
+    <Authors>Deinok</Authors>
     <PackageLicenseUrl>https://raw.githubusercontent.com/deinok/Deinok.Runtime.Serialization/master/LICENSE.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/deinok/Deinok.Runtime.Serialization</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
