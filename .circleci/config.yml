@@ -7,10 +7,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: {{ .Branch }}
+          key: nuget
       - run: dotnet restore
       - save_cache:
-          key: {{ .Branch }}
+          key: nuget
           paths:
             - ~/.nuget/
       - run: dotnet build
