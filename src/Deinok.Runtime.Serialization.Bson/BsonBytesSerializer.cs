@@ -17,9 +17,9 @@ namespace Deinok.Runtime.Serialization.Bson {
 		/// <param name="input">The Input</param>
 		/// <returns>The Bson byte[]</returns>
 		public override byte[] Serialize<TInput>(TInput input){
-			using (MemoryStream memoryStream = new MemoryStream()){
-				using (BsonWriter bsonWriter = new BsonWriter(memoryStream)){
-					JsonSerializer jsonSerializer = new JsonSerializer();
+			using (var memoryStream = new MemoryStream()){
+				using (var bsonWriter = new BsonWriter(memoryStream)){
+					var jsonSerializer = new JsonSerializer();
 					jsonSerializer.Serialize(bsonWriter, input);
 					return memoryStream.ToArray();
 				}
@@ -33,9 +33,9 @@ namespace Deinok.Runtime.Serialization.Bson {
 		/// <param name="input">The Input</param>
 		/// <returns>The Output</returns>
 		public override TOutput Deserialize<TOutput>(byte[] input){
-			using (MemoryStream memoryStream = new MemoryStream(input)){
-				using (BsonReader bsonReader = new BsonReader(memoryStream)){
-					JsonSerializer jsonSerializer = new JsonSerializer();
+			using (var memoryStream = new MemoryStream(input)){
+				using (var bsonReader = new BsonReader(memoryStream)){
+					var jsonSerializer = new JsonSerializer();
 					return jsonSerializer.Deserialize<TOutput>(bsonReader);
 				}
 			}

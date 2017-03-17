@@ -40,6 +40,9 @@ namespace Deinok.Runtime.Serialization.Bson.Tests{
 				return true;
 			}
 
+			public override int GetHashCode() {
+				return base.GetHashCode();
+			}
 		}
 
 	}
