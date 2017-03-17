@@ -4,7 +4,6 @@
   
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
-    <DocumentationFile>bin\Debug\netstandard1.0\Deinok.Runtime.Serialization.Json.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
