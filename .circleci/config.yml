@@ -7,10 +7,18 @@ jobs:
     steps:
       - checkout
 
+      - restore_cache:
+          key: Deinok.Runtime.Serialization
+
       # Compile
       - run: dotnet clean
       - run: dotnet restore
       - run: dotnet build
+      
+      - save_cache:
+          key: Deinok.Runtime.Serialization
+          paths:
+            - ~/.nuget/
 
       # Test
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Tests/Deinok.Runtime.Serialization.Tests.csproj
