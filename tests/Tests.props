@@ -3,6 +3,7 @@
   <Import Project="../Deinok.Runtime.Serialization.props" />
 
   <PropertyGroup>
+    <OutputType>exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
