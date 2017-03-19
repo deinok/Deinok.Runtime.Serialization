@@ -44,7 +44,7 @@ jobs:
       - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.Bson.nupkg
-        - store_artifacts:
+      - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.Json.nupkg
 
