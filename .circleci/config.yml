@@ -41,6 +41,12 @@ jobs:
       - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.Base64.nupkg
+      - store_artifacts:
+          path: ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg
+          destination: Deinok.Runtime.Serialization.Bson.nupkg
+        - store_artifacts:
+          path: ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg
+          destination: Deinok.Runtime.Serialization.Json.nupkg
 
       - deploy:
           name: MyGet
@@ -48,4 +54,6 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
               dotnet nuget push ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+              dotnet nuget push ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+              dotnet nuget push ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
             fi
