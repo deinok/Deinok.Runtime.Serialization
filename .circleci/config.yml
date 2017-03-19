@@ -14,8 +14,12 @@ jobs:
       - run: 
           name: Clean
           command: dotnet clean
-      - run: dotnet restore
-      - run: dotnet build
+      - run: 
+          name: Restore
+          command: dotnet restore
+      - run:
+          name: Build
+          command: dotnet build
       
       - save_cache:
           key: Deinok.Runtime.Serialization
@@ -36,8 +40,5 @@ jobs:
           name: MyGet
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              cd ~/.nuget/NuGet
-              ls -la
-              # apt install nuget
-              # nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg $MY_GET_API_KEY -Source https://www.myget.org/F/deinok/api/v2/package
+              dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg $MY_GET_API_KEY -Source https://www.myget.org/F/deinok/api/v2/package
             fi
