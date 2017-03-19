@@ -1,2 +1,3 @@
-# Deinok.Runtime.Serialization:
+﻿# Deinok.Runtime.Serialization:
 [![CircleCI](https://circleci.com/gh/deinok/Deinok.Runtime.Serialization.svg?style=svg)](https://circleci.com/gh/deinok/Deinok.Runtime.Serialization)
+[![MyGet](https://img.shields.io/myget/deinok-runtime-serialization/v/Deinok.Runtime.Serialization.svg)](https://www.myget.org/feed/Packages/deinok-runtime-serialization)
