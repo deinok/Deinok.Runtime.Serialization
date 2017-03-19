@@ -26,10 +26,14 @@ jobs:
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Bson.Tests/Deinok.Runtime.Serialization.Bson.Tests.csproj
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Json.Tests/Deinok.Runtime.Serialization.Json.Tests.csproj
       
+      -store_artifacts:
+        path: ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg
+        destination: Deinok.Runtime.Serialization.nupkg
+
       - deploy:
           name: MyGet
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              apt install nuget
-              nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg $MY_GET_API_KEY -Source https://www.myget.org/F/deinok/api/v2/package
+              #apt install nuget
+              #nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg $MY_GET_API_KEY -Source https://www.myget.org/F/deinok/api/v2/package
             fi
