@@ -40,5 +40,5 @@ jobs:
           name: MyGet
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg $MY_GET_API_KEY -Source https://www.myget.org/F/deinok/api/v2/package
+              dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg --api-key $MY_GET_API_KEY --source https://www.myget.org/F/deinok/api/v2/package
             fi
