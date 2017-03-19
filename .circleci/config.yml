@@ -32,13 +32,18 @@ jobs:
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Bson.Tests/Deinok.Runtime.Serialization.Bson.Tests.csproj
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Json.Tests/Deinok.Runtime.Serialization.Json.Tests.csproj
       
+      # Artifacts
       - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.nupkg
+      - store_artifacts:
+          path: ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg
+          destination: Deinok.Runtime.Serialization.Base64.nupkg
 
       - deploy:
           name: MyGet
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg --api-key $MY_GET_API_KEY --source https://www.myget.org/F/deinok/api/v2/package
+              dotnet nuget push ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg --api-key $MY_GET_API_KEY --source https://www.myget.org/F/deinok/api/v2/package
             fi
