@@ -8,26 +8,22 @@ jobs:
       MY_GET_SOURCE: https://www.myget.org/F/deinok-runtime-serialization/api/v2/package
     steps:
       - checkout
-
       - restore_cache:
-          key: Deinok.Runtime.Serialization
-
-      # Compile
+          key: NUGET_CACHE
       - run: 
           name: Clean
           command: dotnet clean
       - run: 
           name: Restore
           command: dotnet restore
+       - save_cache:
+          key: NUGET_CACHE
+          paths:
+            - ~/.nuget/
       - run:
           name: Build
           command: dotnet build
       
-      - save_cache:
-          key: Deinok.Runtime.Serialization
-          paths:
-            - ~/.nuget/
-
       # Test
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Tests/Deinok.Runtime.Serialization.Tests.csproj
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Base64.Tests/Deinok.Runtime.Serialization.Base64.Tests.csproj
