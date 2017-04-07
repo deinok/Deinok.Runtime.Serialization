@@ -5,9 +5,12 @@ jobs:
     docker:
       - image: microsoft/dotnet:1.1-sdk
     environment:
+      NUGET_SOURCE: https://api.nuget.org/v3/index.json
       MY_GET_SOURCE: https://www.myget.org/F/deinok-runtime-serialization/api/v2/package
     steps:
       - checkout
+      
+      # Restore-Build
       - restore_cache:
           key: NUGET_CACHE
       - run: 
@@ -16,13 +19,13 @@ jobs:
       - run: 
           name: Restore
           command: dotnet restore
+      - run:
+          name: Build
+          command: dotnet build
       - save_cache:
           key: NUGET_CACHE
           paths:
             - ~/.nuget/
-      - run:
-          name: Build
-          command: dotnet build
       
       # Test
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Tests/Deinok.Runtime.Serialization.Tests.csproj
@@ -43,13 +46,14 @@ jobs:
       - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.Json.nupkg
-
+          
       - deploy:
           name: MyGet
           command: |
+            dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+            dotnet nuget push ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+            dotnet nuget push ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+            dotnet nuget push ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
-              dotnet nuget push ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
-              dotnet nuget push ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
-              dotnet nuget push ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+              echo "I'm in Master branch"
             fi
