@@ -55,5 +55,8 @@ jobs:
             dotnet nuget push ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
             dotnet nuget push ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              echo "I'm in Master branch"
+              #dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg --api-key $NUGET_API_KEY --source $NUGET_SOURCE
+              #dotnet nuget push ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg --api-key $NUGET_API_KEY --source $NUGET_SOURCE
+              #dotnet nuget push ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg --api-key $NUGET_API_KEY --source $NUGET_SOURCE
+              #dotnet nuget push ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg --api-key $NUGET_API_KEY --source $NUGET_SOURCE
             fi
