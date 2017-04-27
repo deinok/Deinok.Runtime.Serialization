@@ -4,7 +4,7 @@
 	/// Base Generic Serializer for Everything
 	/// </summary>
 	/// <typeparam name="TOutput">The Output Type of the Serialization</typeparam>
-	public abstract class BaseGenericSerializer<TOutput> : IGenericSerializer<TOutput>,IGenericDeserializer<TOutput> {
+	public abstract class BaseGenericSerializer<TOutput> : IGenericSerializer<TOutput> {
 
 		/// <summary>
 		/// Serialize a TInput to a TOutput

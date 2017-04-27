@@ -5,7 +5,7 @@
 	/// </summary>
 	/// <typeparam name="TInput">The Deserialized Type</typeparam>
 	/// <typeparam name="TOutput">The Serialized Type</typeparam>
-	public abstract class BaseSerializer<TInput, TOutput> : ISerializer<TInput, TOutput>, IDeserializer<TOutput,TInput> {
+	public abstract class BaseSerializer<TInput, TOutput> : ISerializer<TInput, TOutput> {
 
 		/// <summary>
 		/// Serialize a TInput to a TOutput

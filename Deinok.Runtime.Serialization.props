@@ -11,7 +11,7 @@
     <RepositoryUrl>git@github.com:deinok/Deinok.Runtime.Serialization.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <VersionPrefix>1.0.0</VersionPrefix>
-    <VersionSufix>alpha1</VersionSufix>
+    <VersionSufix>alpha2</VersionSufix>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 

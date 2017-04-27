@@ -18,13 +18,27 @@ namespace Deinok.Runtime.Serialization.Tests {
 			Assert.Equal(this.serializedString, await this.serializer.SerializeAsync(this.deserializedString));
 		}
 
-		private class SerializerMock : ISerializer<string, string>{
+        [Fact]
+        public void DeserializeTest() {
+            Assert.Equal(this.deserializedString, this.serializer.Deserialize(this.serializedString));
+        }
+
+        [Fact]
+        public async void DeserializeAsyncTest() {
+            Assert.Equal(this.deserializedString, await this.serializer.DeserializeAsync(this.serializedString));
+        }
+
+        private class SerializerMock : ISerializer<string, string>{
 
 			public string Serialize(string input){
 				return input.Replace('-', ':');
 			}
 
-		}
+            public string Deserialize(string input) {
+                return input.Replace(':', '-');
+            }
+
+        }
 
     }
 

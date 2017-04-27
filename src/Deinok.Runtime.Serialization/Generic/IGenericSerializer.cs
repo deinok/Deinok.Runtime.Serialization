@@ -14,6 +14,13 @@
 		/// <returns>The Output</returns>
 		TOutput Serialize<TInput>(TInput input);
 
-	}
+        /// <summary>
+        /// Deserialize a TInput to a TOutput
+        /// </summary>
+        /// <typeparam name="TInput">The Input Type</typeparam>
+        /// <param name="outputType">The Input</param>
+        /// <returns>The Output</returns>
+        TInput Deserialize<TInput>(TOutput outputType);
+    }
 
 }
