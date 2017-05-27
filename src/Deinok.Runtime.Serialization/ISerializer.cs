@@ -41,7 +41,7 @@ namespace Deinok.Runtime.Serialization {
 		public static async Task<TOutput> SerializeAsync<TInput, TOutput>(this ISerializer<TInput, TOutput> serializer, TInput inputType) {
 			return await Task.Run(() => {
 				return serializer.Serialize(inputType);
-			});
+			}).ConfigureAwait(false);
 		}
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Deinok.Runtime.Serialization {
         public static async Task<TInput> DeserializeAsync<TOutput, TInput>(this ISerializer<TInput, TOutput> serializer, TOutput outputType) {
             return await Task.Run(() => {
                 return serializer.Deserialize(outputType);
-            });
+            }).ConfigureAwait(false);
         }
 
     }
