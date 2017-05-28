@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using Deinok.Runtime.Serialization.Generic;
 using Xunit;
 
-namespace Deinok.Runtime.Serialization.Tests{
+namespace Deinok.Runtime.Serialization.Tests {
 
     public class IGenericSerializerTest{
 
@@ -21,9 +18,12 @@ namespace Deinok.Runtime.Serialization.Tests{
             );
         }
 
-        [Fact(Skip = "NOT_IMPLEMENTED")]
+        [Fact]
         public async void SerializeAsyncTest() {
-            throw new NotImplementedException();
+            Assert.Equal(
+                this.serialized,
+                await this.serializer.SerializeAsync(this.deserialized).ConfigureAwait(false)
+            );
         }
 
         [Fact]
@@ -34,9 +34,12 @@ namespace Deinok.Runtime.Serialization.Tests{
             );
         }
 
-        [Fact(Skip = "NOT_IMPLEMENTED")]
+        [Fact]
         public async void DeserializeAsyncTest() {
-            throw new NotImplementedException();
+            Assert.Equal(
+                this.deserialized,
+                await this.serializer.DeserializeAsync<string,int>(this.serialized).ConfigureAwait(true)
+            );
         }
 
         private class SerializerMock: IGenericSerializer<string> {

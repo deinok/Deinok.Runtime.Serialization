@@ -2,26 +2,26 @@
 
 namespace Deinok.Runtime.Serialization {
 
-	/// <summary>
-	/// Interface to Serialize a TInput to TOutput
-	/// </summary>
-	/// <typeparam name="TInput">The Deserialized Type</typeparam>
-	/// <typeparam name="TOutput">The Serialized Type</typeparam>
-    public interface ISerializer<TInput,TOutput> {
-
-		/// <summary>
-		/// Serialize a TInput to a TOutput
-		/// </summary>
-		/// <param name="inputType">The Input</param>
-		/// <returns>The Output</returns>
-		TOutput Serialize(TInput inputType);
+    /// <summary>
+    /// Interface to Serialize a TComplex to TSerialized
+    /// </summary>
+    /// <typeparam name="TComplex">The Deserialized Type</typeparam>
+    /// <typeparam name="TSerialized">The Serialized Type</typeparam>
+    public interface ISerializer<TComplex,TSerialized> {
 
         /// <summary>
-        /// Deserialize a TInput to a TOutput
+        /// Serialize a TComplex to a TSerialized
+        /// </summary>
+        /// <param name="inputType">The Input</param>
+        /// <returns>The Output</returns>
+        TSerialized Serialize(TComplex inputType);
+
+        /// <summary>
+        /// Deserialize a TSerialized to a TComplex
         /// </summary>
         /// <param name="outputType">The Input</param>
         /// <returns>The Input</returns>
-        TInput Deserialize(TOutput outputType);
+        TComplex Deserialize(TSerialized outputType);
 
     }
 
@@ -30,29 +30,29 @@ namespace Deinok.Runtime.Serialization {
     /// </summary>
     public static class ISerializerExtension {
 
-		/// <summary>
-		/// Serialize a TInput to a TOutput in a new thread
-		/// </summary>
-		/// <typeparam name="TInput">The Deserialized Type</typeparam>
-		/// <typeparam name="TOutput">The Serialized Type</typeparam>
-		/// <param name="serializer">The Serializer instance</param>
-		/// <param name="inputType">The Input</param>
-		/// <returns>The Output Task</returns>
-		public static async Task<TOutput> SerializeAsync<TInput, TOutput>(this ISerializer<TInput, TOutput> serializer, TInput inputType) {
+        /// <summary>
+        /// Serialize a TComplex to a TOutput in a new thread
+        /// </summary>
+        /// <typeparam name="TComplex">The Deserialized Type</typeparam>
+        /// <typeparam name="TSerialized">The Serialized Type</typeparam>
+        /// <param name="serializer">The Serializer instance</param>
+        /// <param name="inputType">The Input</param>
+        /// <returns>The Output Task</returns>
+        public static async Task<TSerialized> SerializeAsync<TComplex, TSerialized>(this ISerializer<TComplex, TSerialized> serializer, TComplex inputType) {
 			return await Task.Run(() => {
 				return serializer.Serialize(inputType);
 			}).ConfigureAwait(false);
 		}
 
         /// <summary>
-        /// Deserialize a TInput to a TOutput in a new thread
+        /// Deserialize a TOutput to a TInput in a new thread
         /// </summary>
-        /// <typeparam name="TInput">The Serialized Type</typeparam>
-        /// <typeparam name="TOutput">The Deserialized Type</typeparam>
+        /// <typeparam name="TComplex">The Serialized Type</typeparam>
+        /// <typeparam name="TSerialized">The Deserialized Type</typeparam>
         /// <param name="serializer">The Serializer instance</param>
         /// <param name="outputType">The Input</param>
-        /// <returns>The Output Task</returns>
-        public static async Task<TInput> DeserializeAsync<TOutput, TInput>(this ISerializer<TInput, TOutput> serializer, TOutput outputType) {
+        /// <returns>The Input Task</returns>
+        public static async Task<TComplex> DeserializeAsync<TComplex, TSerialized>(this ISerializer<TComplex, TSerialized> serializer, TSerialized outputType) {
             return await Task.Run(() => {
                 return serializer.Deserialize(outputType);
             }).ConfigureAwait(false);

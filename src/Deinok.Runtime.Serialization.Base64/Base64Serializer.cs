@@ -5,14 +5,14 @@ namespace Deinok.Runtime.Serialization.Base64{
 	/// <summary>
 	/// Serialize a byte[] to string
 	/// </summary>
-	public class Base64Serializer : BaseSerializer<byte[], string> {
+	public class Base64Serializer : ISerializer<byte[], string> {
 
 		/// <summary>
 		/// Serialize byte[] to string
 		/// </summary>
 		/// <param name="input">The byte[]</param>
 		/// <returns>The Base64 string</returns>
-		public override string Serialize(byte[] input) {
+		public string Serialize(byte[] input) {
 			return Convert.ToBase64String(input);
 		}
 
@@ -21,7 +21,7 @@ namespace Deinok.Runtime.Serialization.Base64{
 		/// </summary>
 		/// <param name="input">The Base64 string</param>
 		/// <returns>The byte[]</returns>
-		public override byte[] Deserialize(string input) {
+		public byte[] Deserialize(string input) {
 			return Convert.FromBase64String(input);
 		}
 
