@@ -6,5 +6,3 @@
 ## MyGet:
 [![MyGet](https://img.shields.io/myget/deinok-runtime-serialization/v/Deinok.Runtime.Serialization.svg)](https://www.myget.org/feed/Packages/deinok-runtime-serialization)
 
-## Documentation:
-[![GitBook](https://img.shields.io/badge/Documentation-latest-brightgreen.svg?style=flat)](https://deinok.gitbooks.io/deinok-runtime-serialization/content/)
