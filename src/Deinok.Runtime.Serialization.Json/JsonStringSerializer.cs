@@ -1,12 +1,11 @@
-﻿using Deinok.Runtime.Serialization.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace Deinok.Runtime.Serialization.Json {
 
-	/// <summary>
-	/// Serializes objects to a Json String 
-	/// </summary>
-	public class JsonStringSerializer:IGenericSerializer<string> {
+    /// <summary>
+    /// Serializes objects to a Json String 
+    /// </summary>
+    public class JsonStringSerializer:IGenericSerializer<string> {
 		
 		/// <summary>
 		/// Serialize a object

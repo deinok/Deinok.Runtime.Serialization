@@ -1,6 +1,4 @@
-﻿using System;
-using Deinok.Runtime.Serialization.Generic;
-using Xunit;
+﻿using Xunit;
 
 namespace Deinok.Runtime.Serialization.Tests {
 

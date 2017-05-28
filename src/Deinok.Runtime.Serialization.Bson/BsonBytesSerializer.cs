@@ -1,14 +1,13 @@
 ﻿using System.IO;
-using Deinok.Runtime.Serialization.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
 
 namespace Deinok.Runtime.Serialization.Bson {
 
-	/// <summary>
-	/// Serializes objects to a Bson byte[] 
-	/// </summary>
-	public class BsonBytesSerializer:IGenericSerializer<byte[]>{
+    /// <summary>
+    /// Serializes objects to a Bson byte[] 
+    /// </summary>
+    public class BsonBytesSerializer:IGenericSerializer<byte[]>{
 
 		/// <summary>
 		/// Serialize a object
