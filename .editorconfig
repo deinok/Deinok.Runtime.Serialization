@@ -55,6 +55,10 @@ insert_final_newline = true
 tab_width = 4
 trim_trailing_whitespace = true
 
+[*.cshtml]
+indent_size = 4
+indent_style = space
+
 [*.csproj]
 indent_size = 2
 indent_style = space
@@ -75,7 +79,19 @@ indent_style = space
 indent_size = 4
 indent_style = space
 
+[*.props]
+indent_size = 4
+indent_style = tab
+
 [*.py]
+indent_size = 4
+indent_style = space
+
+[*.svg]
+indent_size = 2
+indent_style = space
+
+[*.xaml]
 indent_size = 4
 indent_style = space
 

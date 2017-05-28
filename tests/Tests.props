@@ -1,16 +1,17 @@
-﻿<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <Import Project="../Deinok.Runtime.Serialization.props" />
+	<Import Project="../Deinok.Runtime.Serialization.props" />
 
-  <PropertyGroup>
-    <OutputType>exe</OutputType>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>exe</OutputType>
+		<TargetFramework>netcoreapp1.1</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+		<PackageReference Include="xunit" Version="2.2.0" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+	</ItemGroup>
   
 </Project>
