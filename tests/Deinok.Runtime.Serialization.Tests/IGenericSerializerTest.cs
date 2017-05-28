@@ -20,7 +20,7 @@ namespace Deinok.Runtime.Serialization.Tests {
         public async void SerializeAsyncTest() {
             Assert.Equal(
                 this.serialized,
-                await this.serializer.SerializeAsync(this.deserialized).ConfigureAwait(false)
+                await this.serializer.SerializeAsync<int,string>(this.deserialized).ConfigureAwait(false)
             );
         }
 
