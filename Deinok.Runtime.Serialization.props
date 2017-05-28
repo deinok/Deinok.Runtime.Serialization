@@ -4,6 +4,7 @@
     <PropertyGroup>
         <Authors>Deinok</Authors>
         <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+		<LangVersion>7</LangVersion>
         <NeutralLanguage>en</NeutralLanguage>
         <NoWarn>CS1701</NoWarn>
         <PackageLicenseUrl>https://raw.githubusercontent.com/deinok/Deinok.Runtime.Serialization/master/LICENSE.txt</PackageLicenseUrl>
