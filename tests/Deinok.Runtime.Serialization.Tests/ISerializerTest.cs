@@ -4,50 +4,50 @@ namespace Deinok.Runtime.Serialization.Tests {
 
 	public class ISerializerTest {
 
-		private readonly ISerializer<string, string> serializer = new SerializerMock();
-		private readonly string serializedString = "any:thing";
-		private readonly string deserializedString = "any-thing";
+		private readonly ISerializer<int, string> serializer = new IntToStringSerializer();
+		private readonly string serialized = "123456789";
+		private readonly int deserialized = 123456789;
 
 		[Fact]
         public void SerializeTest() {
 			Assert.Equal(
-                this.serializedString, 
-                this.serializer.Serialize(this.deserializedString)
+                this.serialized, 
+                this.serializer.Serialize(this.deserialized)
             );
         }
 
 		[Fact]
 		public async void SerializeAsyncTest(){
 			Assert.Equal(
-                this.serializedString, 
-                await this.serializer.SerializeAsync(this.deserializedString).ConfigureAwait(false)
+                this.serialized, 
+                await this.serializer.SerializeAsync(this.deserialized).ConfigureAwait(false)
             );
 		}
 
         [Fact]
         public void DeserializeTest() {
             Assert.Equal(
-                this.deserializedString, 
-                this.serializer.Deserialize(this.serializedString)
+                this.deserialized, 
+                this.serializer.Deserialize(this.serialized)
             );
         }
 
         [Fact]
         public async void DeserializeAsyncTest() {
             Assert.Equal(
-                this.deserializedString, 
-                await this.serializer.DeserializeAsync(this.serializedString).ConfigureAwait(false)
+                this.deserialized, 
+                await this.serializer.DeserializeAsync(this.serialized).ConfigureAwait(false)
             );
         }
 
-        private class SerializerMock : ISerializer<string, string>{
+        private class IntToStringSerializer : ISerializer<int, string>{
 
-			public string Serialize(string input){
-				return input.Replace('-', ':');
+			public string Serialize(int input){
+				return input.ToString();
 			}
 
-            public string Deserialize(string input) {
-                return input.Replace(':', '-');
+            public int Deserialize(string input) {
+                return int.Parse(input);
             }
 
         }
