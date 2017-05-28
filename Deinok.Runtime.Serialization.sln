@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE0EF34A-D36E-4836-A0BE-B12C7230DB70}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		Deinok.Runtime.Serialization.props = Deinok.Runtime.Serialization.props
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{98EEE159-981D-4910-A9C1-B7C172E8E2C2}"
@@ -35,6 +37,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serialization.Base64", "src\Deinok.Runtime.Serialization.Base64\Deinok.Runtime.Serialization.Base64.csproj", "{D836E97A-44B7-4FA1-B8C5-ED44B6D39B5F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deinok.Runtime.Serialization.Base64.Tests", "tests\Deinok.Runtime.Serialization.Base64.Tests\Deinok.Runtime.Serialization.Base64.Tests.csproj", "{2CCF3737-78FC-4175-93FF-87D9ADE7741D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "circleci", "circleci", "{136979EB-4294-42BA-A139-0D8DACC9ABFC}"
+	ProjectSection(SolutionItems) = preProject
+		.circleci\config.yml = .circleci\config.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,5 +94,6 @@ Global
 		{DCD8A64C-E7E0-4145-81F3-08BAD78AFEDC} = {E5F495D5-2ADD-4430-AA0C-9639B406C1E9}
 		{D836E97A-44B7-4FA1-B8C5-ED44B6D39B5F} = {98EEE159-981D-4910-A9C1-B7C172E8E2C2}
 		{2CCF3737-78FC-4175-93FF-87D9ADE7741D} = {E5F495D5-2ADD-4430-AA0C-9639B406C1E9}
+		{136979EB-4294-42BA-A139-0D8DACC9ABFC} = {EE0EF34A-D36E-4836-A0BE-B12C7230DB70}
 	EndGlobalSection
 EndGlobal
