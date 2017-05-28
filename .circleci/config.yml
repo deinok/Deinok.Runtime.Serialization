@@ -5,13 +5,14 @@ jobs:
     docker:
       - image: microsoft/dotnet:1.1-sdk
     environment:
-      MY_GET_SOURCE: https://www.myget.org/F/deinok-runtime-serialization/api/v2/package
+      NUGET_SOURCE: https://api.nuget.org/v3/index.json
+      MY_GET_SOURCE: https://www.myget.org/F/deinok-runtime-serialization/api/v3/index.json
     steps:
       - checkout
       
       # Restore-Build
       - restore_cache:
-          key: NUGET_CACHE
+          key: NUGET
       - run: 
           name: Clean
           command: dotnet clean
@@ -22,7 +23,7 @@ jobs:
           name: Build
           command: dotnet build
       - save_cache:
-          key: NUGET_CACHE
+          key: NUGET
           paths:
             - ~/.nuget/
       
