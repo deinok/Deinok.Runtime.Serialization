@@ -36,7 +36,7 @@ namespace Deinok.Runtime.Serialization.Tests {
         public async void DeserializeAsyncTest() {
             Assert.Equal(
                 this.deserialized,
-                await this.serializer.DeserializeAsync<string,int>(this.serialized).ConfigureAwait(true)
+                await this.serializer.DeserializeAsync<int,string>(this.serialized).ConfigureAwait(true)
             );
         }
 
