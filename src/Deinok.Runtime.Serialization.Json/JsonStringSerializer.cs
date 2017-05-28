@@ -6,7 +6,7 @@ namespace Deinok.Runtime.Serialization.Json {
 	/// <summary>
 	/// Serializes objects to a Json String 
 	/// </summary>
-	public class JsonStringSerializer:BaseGenericSerializer<string> {
+	public class JsonStringSerializer:IGenericSerializer<string> {
 		
 		/// <summary>
 		/// Serialize a object
@@ -14,7 +14,7 @@ namespace Deinok.Runtime.Serialization.Json {
 		/// <typeparam name="TInput">The Deserialized Type</typeparam>
 		/// <param name="input">The Input</param>
 		/// <returns>The Json String</returns>
-		public override string Serialize<TInput>(TInput input){
+		public string Serialize<TInput>(TInput input){
 			return JsonConvert.SerializeObject(input);
 		}
 
@@ -24,7 +24,7 @@ namespace Deinok.Runtime.Serialization.Json {
 		/// <typeparam name="TOutput">The Deserialized Type</typeparam>
 		/// <param name="input">The Input</param>
 		/// <returns>The Output</returns>
-		public override TOutput Deserialize<TOutput>(string input){
+		public TOutput Deserialize<TOutput>(string input){
 			return JsonConvert.DeserializeObject<TOutput>(input);
 		}
 
