@@ -10,22 +10,34 @@ namespace Deinok.Runtime.Serialization.Tests {
 
 		[Fact]
         public void SerializeTest() {
-			Assert.Equal(this.serializedString, this.serializer.Serialize(this.deserializedString));
+			Assert.Equal(
+                this.serializedString, 
+                this.serializer.Serialize(this.deserializedString)
+            );
         }
 
 		[Fact]
 		public async void SerializeAsyncTest(){
-			Assert.Equal(this.serializedString, await this.serializer.SerializeAsync(this.deserializedString).ConfigureAwait(false));
+			Assert.Equal(
+                this.serializedString, 
+                await this.serializer.SerializeAsync(this.deserializedString).ConfigureAwait(false)
+            );
 		}
 
         [Fact]
         public void DeserializeTest() {
-            Assert.Equal(this.deserializedString, this.serializer.Deserialize(this.serializedString));
+            Assert.Equal(
+                this.deserializedString, 
+                this.serializer.Deserialize(this.serializedString)
+            );
         }
 
         [Fact]
         public async void DeserializeAsyncTest() {
-            Assert.Equal(this.deserializedString, await this.serializer.DeserializeAsync(this.serializedString).ConfigureAwait(false));
+            Assert.Equal(
+                this.deserializedString, 
+                await this.serializer.DeserializeAsync(this.serializedString).ConfigureAwait(false)
+            );
         }
 
         private class SerializerMock : ISerializer<string, string>{
