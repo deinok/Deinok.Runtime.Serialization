@@ -13,7 +13,7 @@ namespace Deinok.Runtime.Serialization {
         /// Serialize a TComplex to a TSerialized
         /// </summary>
         /// <param name="input">The TComplex Input</param>
-        /// <returns>The Output</returns>
+        /// <returns>The TSerialized Output</returns>
         TSerialized Serialize(TComplex input);
 
     }
