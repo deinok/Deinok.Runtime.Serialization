@@ -17,9 +17,9 @@ namespace Deinok.Runtime.Serialization {
     }
 
     /// <summary>
-    /// Extension Methods for ISerializer
+    /// Extension Methods for IOnlySerializer
     /// </summary>
-    public static class ISerializerExtension {
+    public static class IOnlySerializerExtension {
 
         /// <summary>
         /// Serialize a TComplex to a TOutput async
