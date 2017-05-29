@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace Deinok.Runtime.Serialization {
 
     /// <summary>
