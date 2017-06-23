@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace Deinok.Runtime.Serialization {
+﻿namespace Deinok.Runtime.Serialization {
 
     /// <summary>
     /// Interface to Serialize a TComplex to TSerialized
