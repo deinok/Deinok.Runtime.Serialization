@@ -4,6 +4,7 @@
 	<PropertyGroup>
 		<Authors>Deinok</Authors>
 		<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<LangVersion>7</LangVersion>
 		<NeutralLanguage>en</NeutralLanguage>
 		<NoWarn>CS1701</NoWarn>

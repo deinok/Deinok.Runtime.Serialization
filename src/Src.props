@@ -4,7 +4,6 @@
 	<Import Project="../Deinok.Runtime.Serialization.props" />
 
 	<PropertyGroup>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<OutputType>Library</OutputType>
 	</PropertyGroup>
