@@ -2,12 +2,8 @@
 
 namespace Deinok.Runtime.Serialization.Generic {
 
-	public abstract class SerializedProperty<T>{
-
-		public string Name { get; set; }
-		public abstract SerializedType Type { get; }
+	public abstract class SerializedProperty<T>:SerializedMember{
 		public T Value { get; set; }
-
 	}
 
 	public class SerializedStringProperty : SerializedProperty<string> {
@@ -30,7 +26,7 @@ namespace Deinok.Runtime.Serialization.Generic {
 		public override SerializedType Type { get; } = SerializedType.Enum;
 	}
 
-	public class SerializedObjectProperty : SerializedProperty<object> {
+	public class SerializedObjectProperty : SerializedProperty<SerializedObject> {
 		public override SerializedType Type { get; } = SerializedType.Object;
 	}
 

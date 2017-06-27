@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using Deinok.Runtime.Serialization.Generic;
 using Xunit;
 
@@ -65,10 +66,14 @@ namespace Deinok.Runtime.Serialization.Tests.Generic {
 		public void SerializedObjectProperty(){
 			SerializedObjectProperty property = new SerializedObjectProperty{
 				Name = "propertyName",
-				Value =new TestObject { A="valueA",B=50,C=true}
+				Value = new SerializedObject {
+					SerializedStringProperties =new Collection<SerializedStringProperty>{ new SerializedStringProperty { Name = "A",  Value = "valueA" } },
+					SerializedIntegerProperties = new Collection<SerializedIntegerProperty> { new SerializedIntegerProperty { Name = "B", Value = 50 } },
+					SerializedBoolProperties = new Collection<SerializedBoolProperty> { new SerializedBoolProperty { Name = "C", Value = true } },
+				}
 			};
 
-			Assert.IsType<object>(property.Value);
+			Assert.IsType<SerializedObject>(property.Value);
 			Assert.Equal(SerializedType.Object, property.Type);
 		}
 
