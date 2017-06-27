@@ -10,6 +10,7 @@ namespace Deinok.Runtime.Serialization.Json.Tests{
 
 		[Fact]
 		public void SerializeTest(){
+			var a=new JsonStringSerializer().Serialize<int>(4);
 			Assert.Equal(this.jsonString, this.serializer.Serialize(this.mockObject));
 		}
 
