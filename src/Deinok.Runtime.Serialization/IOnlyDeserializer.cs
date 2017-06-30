@@ -32,9 +32,7 @@ namespace Deinok.Runtime.Serialization {
         /// <param name="input">The TSerialized Input</param>
         /// <returns>The TComplex Task</returns>
         public static async Task<TComplex> DeserializeAsync<TComplex, TSerialized>(this ISerializer<TComplex, TSerialized> serializer, TSerialized input) {
-            return await Task.Run(() => {
-                return serializer.Deserialize(input);
-            }).ConfigureAwait(false);
+			return await Task.FromResult(serializer.Deserialize(input)).ConfigureAwait(false);
         }
 
     }
