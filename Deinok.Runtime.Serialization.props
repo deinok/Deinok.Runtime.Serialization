@@ -15,7 +15,7 @@
 		<RepositoryType>git</RepositoryType>
 		<!--<TreatWarningsAsErrors>True</TreatWarningsAsErrors>-->
 		<VersionPrefix>1.0.0</VersionPrefix>
-		<VersionSufix>alpha4</VersionSufix>
+		<VersionSufix>alpha5</VersionSufix>
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
 
