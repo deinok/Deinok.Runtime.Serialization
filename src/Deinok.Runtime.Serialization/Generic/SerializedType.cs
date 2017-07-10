@@ -1,6 +1,6 @@
 ﻿namespace Deinok.Runtime.Serialization.Generic {
 
-	public enum SerializedType{
+	public enum SerializedType {
 		String,
 		Integer,
 		Float,

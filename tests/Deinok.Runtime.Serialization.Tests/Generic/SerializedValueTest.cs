@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using Deinok.Runtime.Serialization.Generic;
 using Xunit;
 
