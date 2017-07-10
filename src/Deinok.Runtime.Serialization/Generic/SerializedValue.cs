@@ -7,7 +7,7 @@ namespace Deinok.Runtime.Serialization.Generic {
 		T Value { get; set; }
 	}
 
-	public abstract class SerializedValue<T> : ISerializedValue<T> {
+	public abstract class SerializedValue<T> : ISerializedValue<T>{
 		public abstract SerializedType Type { get; }
 		public T Value { get; set; }
 	}
