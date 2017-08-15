@@ -10,22 +10,17 @@ jobs:
     steps:
       - checkout
       
-      # Restore-Build
+      # Test
       - restore_cache:
           key: NUGET
-      - run: 
-          name: Restore
-          command: dotnet restore
-      - save_cache:
-          key: NUGET
-          paths:
-            - ~/.nuget/
-      
-      # Test
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Tests/Deinok.Runtime.Serialization.Tests.csproj
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Base64.Tests/Deinok.Runtime.Serialization.Base64.Tests.csproj
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Bson.Tests/Deinok.Runtime.Serialization.Bson.Tests.csproj
       - run: dotnet test ./tests/Deinok.Runtime.Serialization.Json.Tests/Deinok.Runtime.Serialization.Json.Tests.csproj
+      - save_cache:
+          key: NUGET
+          paths:
+            - ~/.nuget/
       
       # Artifacts
       - store_artifacts:
