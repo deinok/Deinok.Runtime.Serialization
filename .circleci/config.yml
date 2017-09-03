@@ -9,9 +9,6 @@ jobs:
       MY_GET_SOURCE: https://www.myget.org/F/deinok-runtime-serialization/api/v3/index.json
     steps:
       - checkout
-
-      # Build
-      - run: dotnet build
       
       # Test
       - restore_cache:
@@ -25,33 +22,36 @@ jobs:
           paths:
             - ~/.nuget/
       
+      # Build
+      - run: dotnet build
+
       # Artifacts
       - run: dotnet pack ./src/Deinok.Runtime.Serialization/Deinok.Runtime.Serialization.csproj --include-symbols --include-source
       - store_artifacts:
-          path: ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg
-          destination: Deinok.Runtime.Serialization.nupkg
+          path: ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.symbols.nupkg
+          destination: Deinok.Runtime.Serialization.symbols.nupkg
 
       - run: dotnet pack ./src/Deinok.Runtime.Serialization.Base64/Deinok.Runtime.Serialization.Base64.csproj --include-symbols --include-source
       - store_artifacts:
-          path: ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg
-          destination: Deinok.Runtime.Serialization.Base64.nupkg
+          path: ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.symbols.nupkg
+          destination: Deinok.Runtime.Serialization.Base64.symbols.nupkg
       
       - run: dotnet pack ./src/Deinok.Runtime.Serialization.Bson/Deinok.Runtime.Serialization.Bson.csproj --include-symbols --include-source
       - store_artifacts:
-          path: ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg
-          destination: Deinok.Runtime.Serialization.Bson.nupkg
+          path: ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.symbols.nupkg
+          destination: Deinok.Runtime.Serialization.Bson.symbols.nupkg
 
       - run: dotnet pack ./src/Deinok.Runtime.Serialization.Json/Deinok.Runtime.Serialization.Json.csproj --include-symbols --include-source
       - store_artifacts:
-          path: ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg
-          destination: Deinok.Runtime.Serialization.Json.nupkg
+          path: ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.symbols.nupkg
+          destination: Deinok.Runtime.Serialization.Json.symbols.nupkg
           
       - deploy:
           name: MyGet
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
-              dotnet nuget push ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
-              dotnet nuget push ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
-              dotnet nuget push ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+              dotnet nuget push ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.symbols.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+              dotnet nuget push ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.symbols.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+              dotnet nuget push ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.symbols.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
+              dotnet nuget push ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.symbols.nupkg --api-key $MY_GET_API_KEY --source $MY_GET_SOURCE
             fi
