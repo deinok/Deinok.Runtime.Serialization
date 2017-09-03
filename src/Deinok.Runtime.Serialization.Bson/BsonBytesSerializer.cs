@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Bson;
 
@@ -17,7 +17,7 @@ namespace Deinok.Runtime.Serialization.Bson {
 		/// <returns>The Bson byte[]</returns>
 		public byte[] Serialize<TInput>(TInput input){
 			using (var memoryStream = new MemoryStream()){
-				using (var bsonWriter = new BsonWriter(memoryStream)){
+				using (var bsonWriter = new BsonDataWriter(memoryStream)){
 					var jsonSerializer = new JsonSerializer();
 					jsonSerializer.Serialize(bsonWriter, input);
 					return memoryStream.ToArray();
@@ -33,7 +33,7 @@ namespace Deinok.Runtime.Serialization.Bson {
 		/// <returns>The Output</returns>
 		public TOutput Deserialize<TOutput>(byte[] input){
 			using (var memoryStream = new MemoryStream(input)){
-				using (var bsonReader = new BsonReader(memoryStream)){
+				using (var bsonReader = new BsonDataReader(memoryStream)){
 					var jsonSerializer = new JsonSerializer();
 					return jsonSerializer.Deserialize<TOutput>(bsonReader);
 				}
