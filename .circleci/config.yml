@@ -9,6 +9,9 @@ jobs:
       MY_GET_SOURCE: https://www.myget.org/F/deinok-runtime-serialization/api/v3/index.json
     steps:
       - checkout
+
+      # Build
+      - run: dotnet build
       
       # Test
       - restore_cache:
