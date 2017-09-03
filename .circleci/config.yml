@@ -23,15 +23,22 @@ jobs:
             - ~/.nuget/
       
       # Artifacts
+      - run: dotnet pack ./src/Deinok.Runtime.Serialization/Deinok.Runtime.Serialization.csproj --include-symbols --include-source
       - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization/bin/Debug/Deinok.Runtime.Serialization.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.nupkg
+
+      - run: dotnet pack ./src/Deinok.Runtime.Serialization.Base64/Deinok.Runtime.Serialization.Base64.csproj --include-symbols --include-source
       - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization.Base64/bin/Debug/Deinok.Runtime.Serialization.Base64.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.Base64.nupkg
+      
+      - run: dotnet pack ./src/Deinok.Runtime.Serialization.Bson/Deinok.Runtime.Serialization.Bson.csproj --include-symbols --include-source
       - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization.Bson/bin/Debug/Deinok.Runtime.Serialization.Bson.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.Bson.nupkg
+
+      - run: dotnet pack ./src/Deinok.Runtime.Serialization.Json/Deinok.Runtime.Serialization.Json.csproj --include-symbols --include-source
       - store_artifacts:
           path: ./src/Deinok.Runtime.Serialization.Json/bin/Debug/Deinok.Runtime.Serialization.Json.1.0.0.nupkg
           destination: Deinok.Runtime.Serialization.Json.nupkg
